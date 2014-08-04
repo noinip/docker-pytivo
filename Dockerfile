@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.12
+FROM phusion/baseimage:0.9.11
 MAINTAINER pinion <pinion@gmail.com>
 
 # Set correct environment variables.
@@ -14,13 +14,11 @@ CMD ["/sbin/my_init"]
 RUN usermod -u 99 nobody
 RUN usermod -g 100 nobody
 
-# Install pyTivo
+# Install pyTivo and ffmpeg
+RUN add-apt-repository ppa:jon-severinsson/ffmpeg
 RUN apt-get -q update
-RUN apt-get install -qy wget python
-#ffmpeg 
-# https://github.com/phusion/baseimage-docker#workaroud_modifying_etc_hosts
-RUN /usr/bin/workaround-docker-2267
-#RUN git clone http://repo.or.cz/r/pyTivo/wmcbrine/lucasnz.git /opt/pytivo/
+RUN apt-get install -qy wget python ffmpeg
+
 # wget the 2014-07-06 release
 RUN wget http://repo.or.cz/w/pyTivo/wmcbrine/lucasnz.git/snapshot/2f1f223bd62e30a4774828a3c811b1194e18b703.tar.gz
 RUN mkdir /opt/pytivo
