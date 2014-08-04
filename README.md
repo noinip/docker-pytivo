@@ -3,7 +3,7 @@ This is a Dockerfile setup for pyTivo
 To run the latest pyTivo version by lucasnz:
 
 ```
-docker run -p 9032:9032 -h unraid --name="pytivo" -v /path/to/media/:/media -v /path/to/config:/config -v /etc/localtime:/etc/localtime:ro -i -t pinion/pytivo
+docker run -p 9032:9032 -h unraid --name="pytivo" -v /path/to/media/:/media -v /path/to/config:/config -v /etc/localtime:/etc/localtime:ro pinion/docker-pytivo
 
 ```
 
