@@ -14,15 +14,26 @@ CMD ["/sbin/my_init"]
 RUN usermod -u 99 nobody
 RUN usermod -g 100 nobody
 
-# Install pyTivo and ffmpeg
 RUN add-apt-repository ppa:jon-severinsson/ffmpeg
 RUN apt-get -q update
-RUN apt-get install -qy wget python ffmpeg
 
+# Install pyTivo
+RUN apt-get install -qy wget python
 # wget the 2014-07-06 release
 RUN wget http://repo.or.cz/w/pyTivo/wmcbrine/lucasnz.git/snapshot/2f1f223bd62e30a4774828a3c811b1194e18b703.tar.gz
 RUN mkdir /opt/pytivo
 RUN tar -xvf 2f1f223bd62e30a4774828a3c811b1194e18b703.tar.gz -C /opt/pytivo
+
+# Install ffmpeg to /usr/bin/ (pyTivo will be able to find this automatically)
+RUN apt-get install -qy ffmpeg
+
+# Compile tivodecode and tdcat, install to /usr/local/bin/ (pyTivo will be able to find this automatically)
+RUN apt-get install -qy build-essential
+RUN wget http://sourceforge.net/projects/tivodecode/files/tivodecode/0.2pre4/tivodecode-0.2pre4.tar.gz
+RUN tar xvfz tivodecode-0.2pre4.tar.gz -C /opt/
+RUN cd /opt/tivodecode-0.2pre4;./configure
+RUN cd /opt/tivodecode-0.2pre4;make
+RUN cd /opt/tivodecode-0.2pre4;make install
 
 VOLUME /config
 VOLUME /media
