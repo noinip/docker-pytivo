@@ -38,6 +38,7 @@ RUN cd /opt/tivodecode-0.2pre4;make install
 VOLUME /config
 VOLUME /media
 
+EXPOSE 2190
 EXPOSE 9032
 
 # Add pytivo.sh to execute during container startup
