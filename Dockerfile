@@ -20,9 +20,11 @@ RUN apt-get -q update
 # Install pyTivo
 RUN apt-get install -qy wget python
 # wget the 2014-07-06 release
-RUN wget http://repo.or.cz/w/pyTivo/wmcbrine/lucasnz.git/snapshot/2f1f223bd62e30a4774828a3c811b1194e18b703.tar.gz
+#RUN wget http://repo.or.cz/w/pyTivo/wmcbrine/lucasnz.git/snapshot/2f1f223bd62e30a4774828a3c811b1194e18b703.tar.gz
+RUN wget http://repo.or.cz/w/pyTivo/wmcbrine/lucasnz.git/snapshot/bbddd6221fecbfc9172f8c78f64bfe69d02cee8a.tar.gz
 RUN mkdir /opt/pytivo
-RUN tar -xvf 2f1f223bd62e30a4774828a3c811b1194e18b703.tar.gz -C /opt/pytivo
+#RUN tar -xvf 2f1f223bd62e30a4774828a3c811b1194e18b703.tar.gz -C /opt/pytivo
+RUN tar -xvf bbddd6221fecbfc9172f8c78f64bfe69d02cee8a.tar.gz -C /opt/pytivo
 
 # Install ffmpeg to /usr/bin/ (pyTivo will be able to find this automatically)
 RUN apt-get install -qy ffmpeg
