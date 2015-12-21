@@ -16,6 +16,7 @@ docker run -p 9032:9032 -p 2190:2190/udp -d -h unraid --name="pytivo" -v /path/t
 After installing, go to http://server:9032/ and click "settings"
 * Select "Global Server Settings"
 * No need to set paths for ffmpeg, tivodecode and tdcat, they will be found automatically
+* Although if you find it's not working set them to /usr/local/bin/tivodecode and /usr/local/bin/tdcat
 * Set the beacon to the IP address of your Tivo, followed by " listen".  i.e.: "192.168.1.5 listen"
 * Set your tivo_username and tivo_password if you want to push files to your TiVo
 * Set your tivo_mak if you want tivodecode to automatically decrypt the .tivo file to .mpg
