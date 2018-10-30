@@ -30,7 +30,7 @@ After installing, go to http://server:9032/ and click "settings"
 
 For additional help on the settings, see: http://pytivo.sourceforge.net/wiki/index.php/Configure_pyTivo
 
-Not sure how to find your TiVo Mak? See http://lmgtfy.com/?q=what+is+my+tivo+mak
+Not sure how to find your TiVo Media Access Key (MAK)? See http://lmgtfy.com/?q=what+is+my+tivo+mak
 
 You have three options for transferring files:
 * Using the pyTivo web interface, you can pull files from the TiVo.  
