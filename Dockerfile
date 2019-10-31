@@ -21,7 +21,8 @@ RUN apt-get -q update
 RUN apt-get install -qy wget python
 # wget the 2014-07-06 release
 #RUN wget http://repo.or.cz/w/pyTivo/wmcbrine/lucasnz.git/snapshot/2f1f223bd62e30a4774828a3c811b1194e18b703.tar.gz
-RUN wget -O pytivo.tar.gz http://repo.or.cz/w/pyTivo/wmcbrine/lucasnz.git/snapshot/bbddd6221fecbfc9172f8c78f64bfe69d02cee8a.tar.gz
+#RUN wget -O pytivo.tar.gz http://repo.or.cz/w/pyTivo/wmcbrine/lucasnz.git/snapshot/bbddd6221fecbfc9172f8c78f64bfe69d02cee8a.tar.gz
+RUN wget -O pytivo.tar.gz https://repo.or.cz/pyTivo/wmcbrine/lucasnz.git/snapshot/fed77397491e1dc1ffb0fc400998542a5eec8866.tar.gz
 RUN mkdir -p /opt/pytivo/lucasnz
 RUN tar -xvf pytivo.tar.gz -C /opt/pytivo/lucasnz --strip-components=1
 
